@@ -1,0 +1,39 @@
+{
+	"id": "hx-copy-file-content",
+	"name": "hx-copy-file-content",
+	"description": "复制文件内容",
+	"displayName": "复制文件内容",
+	"version": "0.0.0",
+	"publisher": "Noah Young",
+	"engines": {
+		"HBuilderX": "^2.7.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"main": "./extension",
+	"activationEvents": [
+		"onCommand:extension.copyFileContent"
+	],
+	"contributes": {
+		"commands": [{
+			"command": "extension.copyFileContent",
+			"title": "复制内容"
+		}],
+		"menus": {
+			"explorer/context": [{
+					"command": "extension.copyFileContent",
+					"group": "z_commands",
+					"when": "!explorerResourceIsFolder && explorerResourceCount == 1"
+				},
+				{
+					"group": "z_commands"
+				}
+			]
+		}
+	},
+	"extensionDependencies": [
+		"plugin-manager"
+	],
+	"dependencies": {}
+}
