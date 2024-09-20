@@ -19,7 +19,7 @@
 		"commands": [
 			{
 				"command": "extension.copyFileContent",
-				"title": "复制内容"
+				"title": "复制文件内容"
 			}
 		],
 		"menus": {
@@ -28,12 +28,19 @@
 					"command": "extension.copyFileContent",
 					"group": "z_commands",
 					"when": "!explorerResourceIsFolder && explorerResourceCount == 1"
-				},
-				{
-					"group": "z_commands"
 				}
 			]
-		}
+		},
+        "configuration": {
+            "title": "文件内容复制",
+            "properties": {
+                "hx-copy-file-content.sizeWarningLimit": {
+                    "type": "number",
+                    "default": 5242880,
+                    "description": "文件过大预警值（Byte，默认5 * 2 ^ 20 = 5242880 = 5MB；设置0则不限制）"
+                }
+            }
+        }
 	},
 	"extensionDependencies": [
 		"plugin-manager"
