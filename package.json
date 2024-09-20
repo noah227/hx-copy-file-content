@@ -16,12 +16,15 @@
 		"onCommand:extension.copyFileContent"
 	],
 	"contributes": {
-		"commands": [{
-			"command": "extension.copyFileContent",
-			"title": "复制内容"
-		}],
+		"commands": [
+			{
+				"command": "extension.copyFileContent",
+				"title": "复制内容"
+			}
+		],
 		"menus": {
-			"explorer/context": [{
+			"explorer/context": [
+				{
 					"command": "extension.copyFileContent",
 					"group": "z_commands",
 					"when": "!explorerResourceIsFolder && explorerResourceCount == 1"
@@ -35,5 +38,7 @@
 	"extensionDependencies": [
 		"plugin-manager"
 	],
-	"dependencies": {}
+	"dependencies": {
+		"filesize": "^10.1.6"
+	}
 }

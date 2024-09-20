@@ -18,9 +18,10 @@ function activate(context) {
 		// Byte
 		const size = fs.statSync(fsPath).size
 		if(size > sizeWarningLimit) {
+            const filesize = require("filesize")
 			hx.window.showMessageBox({
 				title: "提示",
-				text: `当前文件过大（${size}Byte），是否继续复制文件内容？`,
+				text: `当前文件过大（${filesize.filesize(size)}），是否继续复制文件内容？`,
 				buttons: ["取消", "复制"],
 				defaultButton: "取消"
 			}).then(button => {
