@@ -1,36 +1,35 @@
 {
-	"id": "hx-copy-file-content",
-	"name": "hx-copy-file-content",
-	"description": "复制文件内容",
-	"displayName": "复制文件内容",
-	"version": "0.1.0",
-	"publisher": "Noah Young",
-	"engines": {
-		"HBuilderX": "^2.7.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"main": "./extension",
-	"activationEvents": [
-		"onCommand:extension.copyFileContent"
-	],
-	"contributes": {
-		"commands": [
-			{
-				"command": "extension.copyFileContent",
-				"title": "复制文件内容"
-			}
-		],
-		"menus": {
-			"explorer/context": [
-				{
-					"command": "extension.copyFileContent",
-					"group": "cutcopy",
-					"when": "!explorerResourceIsFolder && explorerResourceCount == 1"
-				}
-			]
-		},
+    "id": "hx-copy-file-content",
+    "name": "hx-copy-file-content",
+    "description": "复制文件内容",
+    "displayName": "复制文件内容",
+    "version": "0.1.0",
+    "publisher": "Noah Young",
+    "engines": {
+        "HBuilderX": "^2.7.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "main": "./extension",
+    "scripts": {
+        "pack": "node hx-pack.js"
+    },
+    "activationEvents": [
+        "onCommand:extension.copyFileContent"
+    ],
+    "contributes": {
+        "commands": [{
+            "command": "extension.copyFileContent",
+            "title": "复制文件内容"
+        }],
+        "menus": {
+            "explorer/context": [{
+                "command": "extension.copyFileContent",
+                "group": "cutcopy",
+                "when": "!explorerResourceIsFolder && explorerResourceCount == 1"
+            }]
+        },
         "configuration": {
             "title": "文件内容复制",
             "properties": {
@@ -41,11 +40,14 @@
                 }
             }
         }
-	},
-	"extensionDependencies": [
-		"plugin-manager"
-	],
-	"dependencies": {
-		"filesize": "^10.1.6"
-	}
+    },
+    "extensionDependencies": [
+        "plugin-manager"
+    ],
+    "dependencies": {
+        "filesize": "^10.1.6"
+    },
+    "devDependencies": {
+        "cozip": "^0.1.1"
+    }
 }
